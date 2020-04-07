@@ -20,7 +20,7 @@ const AddHole = () => {
 
   const addHoleToApi = async () => {
     console.log('adding', hole)
-    const resp = await axios.post('/api/trails', hole)
+    const resp = await axios.post('/api/holes', hole)
     if (resp.status === 201) {
       // do something something else
       setWasSuccessfullyCreated({
@@ -73,7 +73,7 @@ const AddHole = () => {
             <label htmlFor="">State</label>
             <input type="text" name="state" onChange={updateHoleData} />
           </section>
-          <button onClick={addTrailToApi}>Add hole</button>
+          <button onClick={addHoleToApi}>Add hole</button>
         </main>
       </>
     )

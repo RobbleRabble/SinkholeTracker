@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export function Home() {
+export function Signup() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -96,3 +96,5 @@ export function Home() {
     </div>
   )
 }
+
+export default Signup

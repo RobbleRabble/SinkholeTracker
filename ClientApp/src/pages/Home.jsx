@@ -6,10 +6,10 @@ export function Home() {
   return (
     <>
       <main className="hero">
-        <h1>Welcome to Hike Finder</h1>
+        <h1>Welcome to Karstographer</h1>
         <h2>Trails are meant to be hiked</h2>
         <Link to="/search" className="call-to-action">
-          Find a trail
+          Find a
         </Link>
         <Link to="/signup" className="call-to-action">
           Create an Account
