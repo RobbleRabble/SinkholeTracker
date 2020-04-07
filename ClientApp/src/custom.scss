@@ -12,3 +12,16 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.hero {
+  background-image: url('./images/florida_sinkhole_map.png');
+  background-size: cover;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
+}
