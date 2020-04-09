@@ -8,8 +8,8 @@ export function Home() {
   const [viewport, setViewport] = useState({
     width: 400,
     height: 400,
-    latitude: 37.7577,
-    longitude: -122.4376,
+    latitude: 28.0395,
+    longitude: -81.94786,
     zoom: 8,
   })
   const [showPopup, setShowPopup] = useState(false)
@@ -90,7 +90,9 @@ export function Home() {
           <ReactMapGL
             {...viewport}
             onViewportChange={setViewport}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+            mapboxApiAccessToken={
+              'pk.eyJ1IjoicmtpbGR1ZmYiLCJhIjoiY2s4czZna2lxMDFweDNsbzlyMmU0Ym50byJ9.DW5QkRiAEI4c4dEfA2eHyw'
+            }
           >
             {/* {showPopup && (
               <Popup
