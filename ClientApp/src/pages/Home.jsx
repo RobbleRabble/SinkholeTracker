@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
@@ -30,6 +30,13 @@ export function Home() {
     setSelectedPlace(place)
     setShowPopup(true)
   }
+
+  const data = [
+    { latitude: 27.9767, longitude: -82.3403, text: 'A' },
+    { latitude: 27.8767, longitude: -82.4403, text: 'B' },
+    { latitude: 27.988, longitude: -82.3453, text: 'C' },
+    { latitude: 28.033, longitude: -81.9453, text: 'D' },
+  ]
 
   // const addNewLocation = async () => {
   //   // do the API
@@ -94,7 +101,7 @@ export function Home() {
               'pk.eyJ1IjoicmtpbGR1ZmYiLCJhIjoiY2s4czZna2lxMDFweDNsbzlyMmU0Ym50byJ9.DW5QkRiAEI4c4dEfA2eHyw'
             }
           >
-            {/* {showPopup && (
+            {showPopup && (
               <Popup
                 latitude={selectedPlace.latitude}
                 longitude={selectedPlace.longitude}
@@ -107,18 +114,27 @@ export function Home() {
                   🌧 {selectedPlace.description}
                 </div>
               </Popup>
-            )} */}
-            {/* {markers.map(place => {
+            )}
+            {data.map(place => {
               return (
                 <Marker
                   latitude={place.latitude}
                   longitude={place.longitude}
-                  key={place.id}
+                  key={place.text}
                 >
                   <div onClick={() => markerClicked(place)}>🌂</div>
                 </Marker>
               )
-            })} */}
+            })}
+
+            {/* <Marker
+              latitude={27.98}
+              longitude={-82.11}
+              offsetLeft={-20}
+              offsetTop={-10}
+            >
+              <div>There be hole</div>
+            </Marker> */}
           </ReactMapGL>
         </section>
       </main>
