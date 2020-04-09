@@ -54,11 +54,11 @@ const AddHole = () => {
             <input type="text" name="description" onChange={updateHoleData} />
           </section>
           <section>
-            <label htmlFor="">Grade</label>
+            <label htmlFor="">Size</label>
             <input type="text" name="grade" onChange={updateHoleData} />
           </section>
           <section>
-            <label htmlFor="">Route Type</label>
+            <label htmlFor="">Formation</label>
             <input type="text" name="routeType" onChange={updateHoleData} />
           </section>
           <section>
@@ -70,7 +70,7 @@ const AddHole = () => {
             <input type="text" name="city" onChange={updateHoleData} />
           </section>
           <section>
-            <label htmlFor="">State</label>
+            <label htmlFor="">County</label>
             <input type="text" name="state" onChange={updateHoleData} />
           </section>
           <button onClick={addHoleToApi}>Add hole</button>
