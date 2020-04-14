@@ -26,7 +26,7 @@ export function Home() {
   }, [])
 
   const markerClicked = place => {
-    console.log('marker clcked', place)
+    console.log('sinkhole clicked', place)
     setSelectedPlace(place)
     setShowPopup(true)
   }
@@ -75,7 +75,7 @@ export function Home() {
           </button>
           <p>View all sinkholes in Florida?</p>
           <button>
-            <Link to="/view">Search</Link>
+            <Link to="/view">View</Link>
           </button>
           <p>Report a suspected sinkhole?</p>
           <button>
@@ -83,11 +83,11 @@ export function Home() {
           </button>
           <p>Find insurance companies near you?</p>
           <button>
-            <Link to="/add">Add</Link>
+            <Link to="/add">Claims</Link>
           </button>
           <p>FAQ</p>
           <button>
-            <Link to="/faq">Add</Link>
+            <Link to="/faq">Learn!</Link>
           </button>
         </section>
         <section class="featured-sinkhole">
@@ -110,9 +110,7 @@ export function Home() {
                 onClose={() => setShowPopup(false)}
                 offsetTop={-5}
               >
-                <div className="popup-window">
-                  🌧 {selectedPlace.description}
-                </div>
+                <div className="popup-window">🚩{selectedPlace.text}</div>
               </Popup>
             )}
             {data.map(place => {
@@ -122,7 +120,7 @@ export function Home() {
                   longitude={place.longitude}
                   key={place.text}
                 >
-                  <div onClick={() => markerClicked(place)}>🌂</div>
+                  <div onClick={() => markerClicked(place)}>🕳</div>
                 </Marker>
               )
             })}
