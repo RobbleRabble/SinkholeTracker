@@ -17,7 +17,8 @@ export function Home() {
   const [markers, setMarkers] = useState([])
 
   const loadAllLocations = async () => {
-    const resp = await axios.get('/api/location')
+    const resp = await axios.get('/api/sinkholes')
+    console.log(resp)
     setMarkers(resp.data)
   }
 
@@ -31,12 +32,12 @@ export function Home() {
     setShowPopup(true)
   }
 
-  const data = [
-    { latitude: 27.9767, longitude: -82.3403, text: 'A' },
-    { latitude: 27.8767, longitude: -82.4403, text: 'B' },
-    { latitude: 27.988, longitude: -82.3453, text: 'C' },
-    { latitude: 28.033, longitude: -81.9453, text: 'D' },
-  ]
+  // const data = [
+  //   { latitude: 27.9767, longitude: -82.3403, text: 'A' },
+  //   { latitude: 27.8767, longitude: -82.4403, text: 'B' },
+  //   { latitude: 27.988, longitude: -82.3453, text: 'C' },
+  //   { latitude: 28.033, longitude: -81.9453, text: 'D' },
+  // ]
 
   // const addNewLocation = async () => {
   //   // do the API
@@ -113,14 +114,15 @@ export function Home() {
                 <div className="popup-window">🚩{selectedPlace.text}</div>
               </Popup>
             )}
-            {data.map(place => {
+            {markers.map(place => {
               return (
                 <Marker
                   latitude={place.latitude}
                   longitude={place.longitude}
-                  key={place.text}
+                  key={place.id}
+                  // name={place.Name}
                 >
-                  <div onClick={() => markerClicked(place)}>🕳</div>
+                  <div>🕳</div>
                 </Marker>
               )
             })}
