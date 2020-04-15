@@ -111,7 +111,7 @@ export function Home() {
                 onClose={() => setShowPopup(false)}
                 offsetTop={-5}
               >
-                <div className="popup-window">🚩{selectedPlace.text}</div>
+                <div className="popup-window">🚩{selectedPlace.name}</div>
               </Popup>
             )}
             {markers.map(place => {
@@ -120,9 +120,9 @@ export function Home() {
                   latitude={place.latitude}
                   longitude={place.longitude}
                   key={place.id}
-                  // name={place.Name}
+                  name={place.name}
                 >
-                  <div>🕳</div>
+                  <div onClick={() => markerClicked(place)}>🕳</div>
                 </Marker>
               )
             })}
