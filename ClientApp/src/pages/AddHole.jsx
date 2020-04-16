@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 const AddHole = () => {
-  const [hole, setHole] = useState({})
+  const [sinkhole, setSinkhole] = useState({})
   const [wasSuccessfullyCreated, setWasSuccessfullyCreated] = useState({
     shouldRedirect: false,
     newHoleInformation: {},
@@ -12,23 +12,24 @@ const AddHole = () => {
   const updateHoleData = e => {
     const key = e.target.name
     const value = e.target.value
-    setHole(prevHole => {
+    setSinkhole(prevHole => {
       prevHole[key] = value
       return prevHole
     })
   }
 
   const addHoleToApi = async () => {
-    console.log('adding', hole)
-    const resp = await axios.post('/api/holes', hole)
+    console.log('adding', sinkhole)
+    const resp = await axios.post('/api/sinkholes', sinkhole)
     if (resp.status === 201) {
+      console.log('Got here, why no API tho')
       // do something something else
       setWasSuccessfullyCreated({
         shouldRedirect: true,
         newHoleInformation: resp.data,
       })
     } else {
-      // do something else here
+      return console.log('error', sinkhole)
     }
   }
 
@@ -36,8 +37,8 @@ const AddHole = () => {
     return (
       <Redirect
         to={{
-          pathname: `/hole/${wasSuccessfullyCreated.newHoleInformation.id}`,
-          state: { hole: wasSuccessfullyCreated.newHoleInformation },
+          pathname: `/sinkholes/${wasSuccessfullyCreated.newHoleInformation.id}`,
+          state: { sinkhole: wasSuccessfullyCreated.newHoleInformation },
         }}
       />
     )
@@ -54,26 +55,26 @@ const AddHole = () => {
             <input type="text" name="description" onChange={updateHoleData} />
           </section>
           <section>
-            <label htmlFor="">Size</label>
-            <input type="text" name="grade" onChange={updateHoleData} />
-          </section>
-          <section>
             <label htmlFor="">Formation</label>
-            <input type="text" name="routeType" onChange={updateHoleData} />
-          </section>
-          <section>
-            <label htmlFor="">Address</label>
-            <input type="text" name="address" onChange={updateHoleData} />
-          </section>
-          <section>
-            <label htmlFor="">City</label>
-            <input type="text" name="city" onChange={updateHoleData} />
+            <input type="text" name="formation" onChange={updateHoleData} />
           </section>
           <section>
             <label htmlFor="">County</label>
-            <input type="text" name="state" onChange={updateHoleData} />
+            <input type="text" name="county" onChange={updateHoleData} />
           </section>
-          <button onClick={addHoleToApi}>Add hole</button>
+          <section>
+            <label htmlFor="">Latitude</label>
+            <input type="text" name="latitude" onChange={updateHoleData} />
+          </section>
+          <section>
+            <label htmlFor="">Longitude</label>
+            <input type="text" name="longitude" onChange={updateHoleData} />
+          </section>
+          <section>
+            <label htmlFor="">Address</label>
+            <input type="text" name="fullAddress" onChange={updateHoleData} />
+          </section>
+          <button onClick={addHoleToApi}>Add The Sinkhole!</button>
         </main>
       </>
     )

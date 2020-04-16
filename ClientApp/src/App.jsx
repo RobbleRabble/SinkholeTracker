@@ -8,6 +8,8 @@ import NotFound from './pages/NotFound'
 import AddHole from './pages/AddHole'
 import Search from './pages/Search'
 import SignUp from './pages/Signup'
+import ByCounty from './pages/ByCounty'
+
 // import HoleDetails from './pages/Holedetails'
 
 import './custom.scss'
@@ -19,6 +21,7 @@ export default class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/view/county" component={ByCounty} />
           <Route exact path="/search" component={Search} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/signup" component={SignUp} />
