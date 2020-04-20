@@ -19,8 +19,12 @@ const AddHole = () => {
   }
 
   const addHoleToApi = async () => {
-    console.log('adding', sinkhole)
-    const resp = await axios.post('/api/sinkholes', sinkhole)
+    console.log('pushed the button!', sinkhole)
+    const resp = await axios.post('/api/sinkholes', {
+      ...sinkhole,
+      latitude: parseFloat(sinkhole.latitude),
+      longitude: parseFloat(sinkhole.longitude),
+    })
     if (resp.status === 201) {
       console.log('Got here, why no API tho')
       // do something something else
