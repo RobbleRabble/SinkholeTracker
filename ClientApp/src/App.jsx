@@ -29,7 +29,7 @@ export default class App extends Component {
           <Route exact path="/add" component={AddHole} />
           <Route
             exact
-            path="/sinkhole/:sinkholeId"
+            path="/sinkholes/:sinkholeId"
             component={SinkholeDetails}
           />
           {/* <Route exact path="/hole/:holeId" component={HoleDetails} /> */}

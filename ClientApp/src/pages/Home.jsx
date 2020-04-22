@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactMapGL, { Marker, Popup } from 'react-map-gl'
+import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
@@ -102,6 +102,11 @@ export function Home() {
               'pk.eyJ1IjoicmtpbGR1ZmYiLCJhIjoiY2s4czZna2lxMDFweDNsbzlyMmU0Ym50byJ9.DW5QkRiAEI4c4dEfA2eHyw'
             }
           >
+            <GeolocateControl
+              positionOptions={{ enableHighAccuracy: true }}
+              trackUserLocation={true}
+            ></GeolocateControl>
+            >
             {showPopup && (
               <Popup
                 latitude={selectedPlace.latitude}
@@ -126,7 +131,6 @@ export function Home() {
                 </Marker>
               )
             })}
-
             {/* <Marker
               latitude={27.98}
               longitude={-82.11}

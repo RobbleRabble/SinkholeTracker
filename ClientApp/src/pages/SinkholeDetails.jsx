@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import PageLoaders from '../components/PageLoaders'
+import EmptyHoleList from '../components/EmptyHoleList'
 import Sinkhole from '../components/Sinkhole'
 
 const SinkholeDetails = props => {
@@ -12,6 +12,7 @@ const SinkholeDetails = props => {
   const getSinkholeData = async () => {
     const resp = await axios.get('/api/sinkholes/' + sinkholeId)
     console.log(resp.data)
+    console.log('Fetching that data!')
     setSinkhole(resp.data)
   }
 
@@ -22,10 +23,9 @@ const SinkholeDetails = props => {
 
   if (sinkhole) {
     return <Sinkhole sinkhole={sinkhole} />
+  } else {
+    return <EmptyHoleList />
   }
-  // else {
-  //   return <PageLoaders />
-  // }
 }
 
 export default SinkholeDetails

@@ -1,14 +1,14 @@
-import React from 'react'
+// import React from 'react'
 
-const HoleList = props => {
-  let { results } = props
-  return (
-    <ul>
-      {results.map(hole => {
-        return <li>{hole.name}</li>
-      })}
-    </ul>
-  )
-}
+// const HoleList = props => {
+//   let { results } = props
+//   return (
+//     <ul>
+//       {results.map(hole => {
+//         return <li>{hole.name}</li>
+//       })}
+//     </ul>
+//   )
+// }
 
-export default HoleList
+// export default HoleList
