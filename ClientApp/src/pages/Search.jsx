@@ -9,7 +9,9 @@ const Search = () => {
   const [results, setResults] = useState([])
 
   const searchForHoles = async () => {
-    const resp = await axios.get(`/api/search/holes?searchTerm=${searchTerm}`)
+    const resp = await axios.get(
+      `/api/search/sinkholes?searchTerm=${searchTerm}`
+    )
     console.log(resp.data)
     setResults(resp.data)
   }
