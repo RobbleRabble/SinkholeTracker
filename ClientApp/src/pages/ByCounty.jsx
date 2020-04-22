@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import EmptyHoleList from '../components/EmptyHoleList'
-import HoleList from '../components/HoleList'
+
 const ByCounty = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [results, setResults] = useState([])

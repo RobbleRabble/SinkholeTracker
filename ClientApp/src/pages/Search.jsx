@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import EmptyHoleList from '../components/EmptyHoleList'
-import HoleList from '../components/HoleList'
+import SinkholeList from '../components/SinkholeList'
+
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [results, setResults] = useState([])
@@ -25,7 +26,7 @@ const Search = () => {
       </section>
       <main>
         {results.length > 0 ? (
-          <HoleList results={results} />
+          <SinkholeList results={results} />
         ) : (
           <EmptyHoleList />
         )}

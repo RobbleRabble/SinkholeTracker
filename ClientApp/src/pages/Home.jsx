@@ -84,7 +84,11 @@ export function Home() {
           </button>
           <p>Find insurance companies near you?</p>
           <button>
-            <Link to="/add">Claims</Link>
+            <Link to="/insure">Claims</Link>
+          </button>
+          <p>Search For Sinkholes by name</p>
+          <button>
+            <Link to="/search">Search</Link>
           </button>
           <p>FAQ</p>
           <button>
