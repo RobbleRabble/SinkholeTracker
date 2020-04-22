@@ -11,6 +11,7 @@ import Search from './pages/Search'
 import SignUp from './pages/Signup'
 import ByCounty from './pages/ByCounty'
 import Insurance from './pages/Insurance'
+import Faq from './pages/Faq'
 
 // import HoleDetails from './pages/Holedetails'
 
@@ -34,6 +35,7 @@ export default class App extends Component {
             component={SinkholeDetails}
           />
           <Route exact path="/insure" component={Insurance} />
+          <Route exact path="/faq" component={Faq} />
           {/* <Route exact path="/hole/:holeId" component={HoleDetails} /> */}
           <Route exact path="*" component={NotFound} />
         </Switch>

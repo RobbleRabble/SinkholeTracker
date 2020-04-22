@@ -74,9 +74,9 @@ export function Home() {
           <button>
             <Link to="/view/county">View</Link>
           </button>
-          <p>View all sinkholes in Florida?</p>
+          <p>View all sinkholes in database?</p>
           <button>
-            <Link to="/view">View</Link>
+            <Link to="/view/all">View</Link>
           </button>
           <p>Report a suspected sinkhole?</p>
           <button>
@@ -86,7 +86,7 @@ export function Home() {
           <button>
             <Link to="/insure">Claims</Link>
           </button>
-          <p>Search For Sinkholes by name</p>
+          <p>Search For Sinkholes by name or county</p>
           <button>
             <Link to="/search">Search</Link>
           </button>

@@ -31,7 +31,9 @@ namespace SinkholeTracker.Controllers
       var results = _context.Sinkholes.Where(w =>
         w.Name.ToLower().Contains(searchTerm.ToLower()) ||
         w.Description.ToLower().Contains(searchTerm.ToLower()) ||
-        w.County.ToLower().Contains(searchTerm.ToLower())
+        w.County.ToLower().Contains(searchTerm.ToLower()) 
+        // ||
+        // w.Id.ToLower().Contains(searchTerm.ToLower())
       );
 
 

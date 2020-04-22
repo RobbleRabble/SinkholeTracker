@@ -4,6 +4,7 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 // import SinkholeAverageRating from './SinkholeAverageRating'
+import PlaceSinkhole from '../images/placeholder_sinkhole.jpg'
 
 const Sinkhole = props => {
   const { sinkhole } = props
@@ -47,7 +48,7 @@ const Sinkhole = props => {
 
   return (
     <main className="sinkhole-details">
-      <img src="https://placekitten.com/600/400" alt="Huh" />
+      <img src={PlaceSinkhole} alt="Huh" />
       <section className="sinkhole-header">
         <h1>Details for {sinkhole.name}</h1>
 
