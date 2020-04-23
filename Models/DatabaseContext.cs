@@ -8,6 +8,7 @@ namespace SinkholeTracker.Models
   public partial class DatabaseContext : DbContext
   {
     public DbSet<Sinkhole> Sinkholes { get; set; }
+    public DbSet<Review> Reviews { get; set; }
 
 
 

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 namespace SinkholeTracker.Models
 {
 
@@ -11,6 +13,10 @@ namespace SinkholeTracker.Models
     public double Latitude { get; set; }
     public double Longitude { get; set; }
     public string FullAddress { get; set; }
-    // maybe volume
+    // public int Volume { get; set; }
+
+    // public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+    public List<Review> Reviews { get; set; } = new List<Review>();
   }
 }

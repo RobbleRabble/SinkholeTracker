@@ -25,6 +25,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/view/county" component={ByCounty} />
+          {/* <Route exact path="/view/" component={View} /> */}
           <Route exact path="/search" component={Search} />
           {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/signup" component={SignUp} />

@@ -34,7 +34,7 @@ namespace SinkholeTracker.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult<Sinkhole>> GetSinkhole(int id)
     {
-      var sinkhole = await _context.Sinkholes.FindAsync(id);
+      var sinkhole = await _context.Sinkholes.Include(sinkhole => sinkhole.Reviews).FirstOrDefaultAsync(sinkhole => sinkhole.Id == id);
 
       if (sinkhole == null)
       {
@@ -102,6 +102,24 @@ namespace SinkholeTracker.Controllers
       await _context.SaveChangesAsync();
 
       return sinkhole;
+    }
+
+        [HttpPost("{sinkholeId}/reviews")]
+    public async Task<ActionResult> AddReviewForTrail(int sinkholeId, Review review)
+    {
+      //opt 1
+      review.SinkholeId = sinkholeId;
+      // add the review to the database
+      _context.Reviews.Add(review);
+      await _context.SaveChangesAsync();
+      // returning something
+      return Ok(review);
+      //   opt 2
+
+      //   var sinkhole = await _context.Sinkholes.FirstOrDefaultAsync(f => f.Id == sinkholeId);
+      //   sinkhole.Reviews.Add(review);
+      //   await _context.SaveChangesAsync();
+
     }
 
     private bool SinkholeExists(int id)

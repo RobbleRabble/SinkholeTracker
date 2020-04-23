@@ -29,18 +29,18 @@ const Sinkhole = props => {
   // const [markers, setMarkers] = useState([])
 
   // const [newReviewText, setNewReviewText] = useState('')
-  // const [reviewScore, setReviewScore] = useState(0)
-  // const [reviews, setReviews] = useState(Sinkhole.reviews)
+  const [answer, setAnswer] = useState(false)
+  const [reviews, setReviews] = useState(sinkhole.reviews)
 
-  // const sendReviewToApi = async () => {
-  //   const resp = await axios.post(`/api/Sinkholes/${Sinkhole.id}/reviews`, {
-  //     rating: reviewScore,
-  //     comment: newReviewText,
-  //   })
-  //   console.log(resp.data)
-  //   // update state with  the new data
-  //   setReviews([resp.data, ...reviews])
-  // }
+  const sendYesOrNoToApi = async () => {
+    const resp = await axios.post(`/api/sinkholes/${sinkhole.id}/reviews`, {
+      answer: answer,
+      // comment: newReviewText,
+    })
+    console.log(resp.data)
+    // update state with  the new data
+    setReviews([resp.data, ...reviews])
+  }
 
   // const saveSinkholeForUser = async () => {
   //   // tell our API 2 things,
@@ -115,9 +115,19 @@ const Sinkhole = props => {
           </ReactMapGL>
         </section>
         <section className="review">
-          <p>Is this a sinhole?</p>
-          <button>Yes!</button>
-          <button>Fake News!</button>
+          <h3>This sinkhole has {reviews.length} reviews.</h3>
+          <h3>Is this a sinkhole?</h3>
+          <button onClick={() => setAnswer(true)}>Yes!</button>
+          <button onClick={() => setAnswer(false)}>Fake News!</button>
+          <div className="vote-tally">
+            <p>Total Votes</p>
+            <p>Yes votes:</p>
+            <p>Nay votes"</p>
+            <h4>You are voting {answer ? 'yes' : 'no'}</h4>
+            <h5>Previous Comments about {sinkhole.name}</h5>
+            <button onClick={sendYesOrNoToApi}>Cast Vote!</button>
+            {/* <button>Cast Vote!</button> */}
+          </div>
         </section>
       </section>
     </main>
