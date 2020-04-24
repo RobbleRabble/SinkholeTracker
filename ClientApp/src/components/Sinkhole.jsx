@@ -51,7 +51,9 @@ const Sinkhole = props => {
     // update state with  the new data
     setReviews([resp.data, ...reviews])
   }
-  // const yesCount = reviews.where(reviews.answer == true)
+
+  const yesCount = reviews.filter(r => r.answer).length
+  const noCount = reviews.length - yesCount
 
   // const saveSinkholeForUser = async () => {
   //   // tell our API 2 things,
@@ -135,14 +137,12 @@ const Sinkhole = props => {
           <button onClick={() => setAnswer(false)}>Fake News!</button>
           <div className="vote-tally">
             <p>Total Votes</p>
-            {/* THIS IS WHAT I WANT */}
-            {/* <p>Yes votes: {yesCount}</p> */}
-            <p>Yes votes:</p>
-            <p>Nay votes:</p>
+            <p>Yes votes: {yesCount}</p>
+            <p>Nay votes: {noCount}</p>
+            {/* would be nice to get this as a non default anwer */}
             <h4>You are voting {answer ? 'yes' : 'no'}</h4>
             <h5>Previous Comments about {sinkhole.name}</h5>
             <button onClick={sendYesOrNoToApi}>Cast Vote!</button>
-            {/* <button>Cast Vote!</button> */}
           </div>
         </section>
       </section>
