@@ -29,7 +29,18 @@ const Sinkhole = props => {
 
   // const [newReviewText, setNewReviewText] = useState('')
   const [answer, setAnswer] = useState(false)
+  // const [priorReviews, setPriorReviews] = useState({})
   const [reviews, setReviews] = useState(sinkhole.reviews)
+
+  // const loadPrevReviews = async () => {
+  //   const resp = await axios.get(`/api/sinkholes/${sinkhole.id}/reviews`)
+  //   console.log(resp)
+  //   setPriorReviews(resp.data)
+  // }
+
+  // useEffect(() => {
+  //   loadPrevReviews()
+  // }, [])
 
   const sendYesOrNoToApi = async () => {
     const resp = await axios.post(`/api/sinkholes/${sinkhole.id}/reviews`, {
@@ -40,7 +51,7 @@ const Sinkhole = props => {
     // update state with  the new data
     setReviews([resp.data, ...reviews])
   }
-  // let yesCount = reviews.where((answer = true))
+  // const yesCount = reviews.where(reviews.answer == true)
 
   // const saveSinkholeForUser = async () => {
   //   // tell our API 2 things,
@@ -124,6 +135,7 @@ const Sinkhole = props => {
           <button onClick={() => setAnswer(false)}>Fake News!</button>
           <div className="vote-tally">
             <p>Total Votes</p>
+            {/* THIS IS WHAT I WANT */}
             {/* <p>Yes votes: {yesCount}</p> */}
             <p>Yes votes:</p>
             <p>Nay votes:</p>
