@@ -14,8 +14,6 @@ import PlaceSinkhole from '../images/placeholder_sinkhole.jpg'
 const Sinkhole = props => {
   const { sinkhole } = props
   const [viewport, setViewport] = useState({
-    height: 400,
-    width: 400,
     // need to change width
     latitude: sinkhole.latitude,
     longitude: sinkhole.longitude,
@@ -26,6 +24,7 @@ const Sinkhole = props => {
     console.log('sinkhole clicked', sinkhole)
     setShowPopup(true)
   }
+
   // const [markers, setMarkers] = useState([])
 
   // const [newReviewText, setNewReviewText] = useState('')
@@ -41,6 +40,7 @@ const Sinkhole = props => {
     // update state with  the new data
     setReviews([resp.data, ...reviews])
   }
+  // let yesCount = reviews.where((answer = true))
 
   // const saveSinkholeForUser = async () => {
   //   // tell our API 2 things,
@@ -79,6 +79,9 @@ const Sinkhole = props => {
         <section className="map-container">
           <h2>{sinkhole.name} location</h2>
           <ReactMapGL
+            className="single-map"
+            height="100vh"
+            width="auto"
             {...viewport}
             onViewportChange={setViewport}
             mapboxApiAccessToken={
@@ -121,8 +124,9 @@ const Sinkhole = props => {
           <button onClick={() => setAnswer(false)}>Fake News!</button>
           <div className="vote-tally">
             <p>Total Votes</p>
+            {/* <p>Yes votes: {yesCount}</p> */}
             <p>Yes votes:</p>
-            <p>Nay votes"</p>
+            <p>Nay votes:</p>
             <h4>You are voting {answer ? 'yes' : 'no'}</h4>
             <h5>Previous Comments about {sinkhole.name}</h5>
             <button onClick={sendYesOrNoToApi}>Cast Vote!</button>
