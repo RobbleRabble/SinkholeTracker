@@ -89,6 +89,7 @@ const Sinkhole = props => {
         </p> */}
         <p className="address">Address: {sinkhole.fullAddress}</p>
         <p>County: {sinkhole.county}</p>
+        <p>Formation: {sinkhole.formation}</p>
         <section className="map-container">
           <h2>{sinkhole.name} location</h2>
           <ReactMapGL
