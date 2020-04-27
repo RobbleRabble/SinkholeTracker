@@ -135,14 +135,6 @@ export function Home() {
                 </Marker>
               )
             })}
-            {/* <Marker
-              latitude={27.98}
-              longitude={-82.11}
-              offsetLeft={-20}
-              offsetTop={-10}
-            >
-              <div>There be hole</div>
-            </Marker> */}
           </ReactMapGL>
         </section>
       </main>

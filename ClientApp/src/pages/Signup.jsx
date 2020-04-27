@@ -12,7 +12,7 @@ export function Signup() {
   const [token, setToken] = useState('')
 
   const sendNewUserToApi = async () => {
-    // add extra validation logic here
+    // if time, add extra validation logic here
     const resp = await axios.post('/auth/signup', {
       fullName: fullName,
       email: email,

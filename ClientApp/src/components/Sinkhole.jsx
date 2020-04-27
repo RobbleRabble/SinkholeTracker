@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ReactMapGL, {
   Marker,
@@ -27,25 +27,25 @@ const Sinkhole = props => {
 
   // const [markers, setMarkers] = useState([])
 
-  // const [newReviewText, setNewReviewText] = useState('')
+  const [newReviewText, setNewReviewText] = useState('')
   const [answer, setAnswer] = useState(false)
-  // const [priorReviews, setPriorReviews] = useState({})
+  const [priorReviews, setPriorReviews] = useState({})
   const [reviews, setReviews] = useState(sinkhole.reviews)
 
-  // const loadPrevReviews = async () => {
-  //   const resp = await axios.get(`/api/sinkholes/${sinkhole.id}/reviews`)
-  //   console.log(resp)
-  //   setPriorReviews(resp.data)
-  // }
+  const loadPrevReviews = async () => {
+    const resp = await axios.get(`/api/sinkholes/${sinkhole.id}/reviews`)
+    console.log(resp)
+    setPriorReviews(resp.data)
+  }
 
-  // useEffect(() => {
-  //   loadPrevReviews()
-  // }, [])
+  useEffect(() => {
+    loadPrevReviews()
+  }, [])
 
   const sendYesOrNoToApi = async () => {
     const resp = await axios.post(`/api/sinkholes/${sinkhole.id}/reviews`, {
       answer: answer,
-      // comment: newReviewText,
+      comment: newReviewText,
     })
     console.log(resp.data)
     // update state with  the new data
@@ -85,7 +85,7 @@ const Sinkhole = props => {
           {sinkhole.longitude}
         </p>
         {/* <p className="reviews">
-          <SinkholeAverageRating reviews={reviews} />
+          <SinkholeComments reviews={reviews} />
         </p> */}
         <p className="address">Address: {sinkhole.fullAddress}</p>
         <p>County: {sinkhole.county}</p>
@@ -130,7 +130,7 @@ const Sinkhole = props => {
             <NavigationControl />
           </ReactMapGL>
         </section>
-        <section className="review">
+        <section className="vote">
           <h3>This sinkhole has {reviews.length} reviews.</h3>
           <h3>Is this a sinkhole?</h3>
           <button onClick={() => setAnswer(true)}>Yes!</button>

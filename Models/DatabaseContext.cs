@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using SinkholeTracker.Models;
 
 namespace SinkholeTracker.Models
 {
@@ -9,6 +10,7 @@ namespace SinkholeTracker.Models
   {
     public DbSet<Sinkhole> Sinkholes { get; set; }
     public DbSet<Review> Reviews { get; set; }
+    public DbSet<User> Users { get; set; }
 
 
 
@@ -34,6 +36,8 @@ namespace SinkholeTracker.Models
         optionsBuilder.UseNpgsql(conn);
       }
     }
+
+    public DbSet<SinkholeTracker.Models.Bookmark> Bookmark { get; set; }
 
   }
 }
