@@ -93,7 +93,7 @@ const Sinkhole = props => {
         <section className="map-container">
           <h2>{sinkhole.name} location</h2>
           <ReactMapGL
-            className="single-map"
+            className="sinkhole-map"
             height="100vh"
             width="auto"
             {...viewport}

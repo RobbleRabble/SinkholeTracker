@@ -7,6 +7,18 @@ code {
   color: #e01a76;
 }
 
+.intro-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.credits {
+  width: auto;
+  flex-wrap: wrap;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -18,7 +30,7 @@ body {
 }
 
 .hero {
-  background-image: url('./images/florida_sinkhole_map.png');
+  background-image: url('./images/hero.jpg');
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -30,10 +42,103 @@ body {
   margin-right: 0;
 }
 
+.hero > h5 {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  background: linear-gradient(
+    rgba(184, 183, 182, 0.75),
+    rgba(50, 52, 53, 0.75)
+  );
+  width: 100%;
+}
+
 .loader {
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.home {
+  text-align: center;
+}
+.home h1 {
+  margin: 5rem;
+}
+.home p {
+  font-size: 30px;
+  margin: 2rem;
+  text-decoration: underline;
+}
+.home button {
+  width: 8rem;
+}
+
+.hero > h1 {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  background: linear-gradient(
+    rgba(255, 224, 102, 0.75),
+    rgba(242, 95, 92, 0.75)
+  );
+  width: 100%;
+}
+
+.search-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-container input {
+  width: 50%;
+  margin-right: 1rem;
+}
+
+.no-results-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+  color: slategray;
+}
+
+.error-image {
+  height: 80vh;
+  width: 30vw;
+  opacity: 0.8;
+}
+
+section.redirect {
+  padding-left: 2rem;
+}
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(21, 21, 21, 0.81);
+}
+
+.sinkhole-map {
+  height: 100vh;
+  width: auto;
 }

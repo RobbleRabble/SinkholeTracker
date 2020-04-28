@@ -57,15 +57,19 @@ export function Home() {
     <>
       <main>
         <header>
-          <h1>Welcome to Karstographer</h1>
-          <h4>View, report, and learn about sinkholes</h4>
+          <section className="intro-text">
+            <h1>Welcome to Karstographer</h1>
+            <h4>View, report, and learn about sinkholes</h4>
+          </section>
         </header>
-        <section class="hero"></section>
-        <p>Photo provided by the US Dept of Natural Resources</p>
-        <footer>
+        <section className="hero">
           <h5>
             They're pretty underground, but you've probably heard about them
           </h5>
+        </section>
+        <footer className="credits">
+          Photo of a sinkhole in the village of Pinzo do Morado, in Guerrero
+          state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
 
         <section class="what-want">
@@ -100,6 +104,7 @@ export function Home() {
         </section>
         <section className="map-container">
           <ReactMapGL
+            className="sinkhole-map"
             {...viewport}
             onViewportChange={setViewport}
             mapboxApiAccessToken={
