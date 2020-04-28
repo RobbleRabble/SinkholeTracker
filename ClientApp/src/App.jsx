@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import ByCounty from './pages/ByCounty'
 import Insurance from './pages/Insurance'
 import Faq from './pages/Faq'
+import View from './pages/View'
 
 // import HoleDetails from './pages/Holedetails'
 
@@ -26,7 +27,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/view/county" component={ByCounty} />
-          {/* <Route exact path="/view/" component={View} /> */}
+          <Route exact path="/view/all" component={View} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />

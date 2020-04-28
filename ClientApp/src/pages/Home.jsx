@@ -71,6 +71,7 @@ export function Home() {
           Photo of a sinkhole in the village of Pinzo do Morado, in Guerrero
           state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
+        <h1>This is a test</h1>
 
         <section className="options">
           <h4>How can I help?</h4>
