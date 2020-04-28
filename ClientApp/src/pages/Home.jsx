@@ -61,16 +61,14 @@ export function Home() {
           </section>
         </header>
         <section className="hero">
-          <h5>
-            They're pretty underground, but you've probably heard about them
-          </h5>
+          <h5>For when you want the hole story</h5>
         </section>
         <footer className="credits">
           Photo of a sinkhole in the village of Pinzo do Morado, in Guerrero
           state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
 
-        <h3>How can I help?</h3>
+        <h3>Select an option:</h3>
         <section className="options">
           <p>Search For Sinkholes by name or county</p>
           <button>
@@ -95,7 +93,7 @@ export function Home() {
           </button>
         </section>
         <section className="map-container">
-          <h2>Map of sinkholes</h2>
+          <h2>Map of reported depressions (sinkholes)</h2>
           <ReactMapGL
             className="sinkhole-map"
             height="100vh"
@@ -121,6 +119,9 @@ export function Home() {
                 offsetTop={-5}
               >
                 <div className="popup-window">🚩{selectedPlace.name}</div>
+                <div>
+                  <Link to={`/sinkholes/${selectedPlace.id}`}>Link</Link>
+                </div>
               </Popup>
             )}
             {markers.map(place => {
@@ -137,6 +138,9 @@ export function Home() {
             })}
           </ReactMapGL>
         </section>
+        <footer className="closer">
+          Created by Rob Kilduff, a student of the Suncoast Developers Guild
+        </footer>
       </main>
     </>
   )
