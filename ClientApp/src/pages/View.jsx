@@ -28,7 +28,7 @@ const View = () => {
       <h1>Sinkholes in database</h1>
       <h5>
         {sinkholes.map(sinkhole => {
-          return <Sinkhole sinkhole={sinkhole} />
+          return <AllSinkholes sinkhole={sinkhole} />
         })}
       </h5>
     </>

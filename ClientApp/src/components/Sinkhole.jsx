@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import ReactMapGL, {
-  Marker,
-  Popup,
-  GeolocateControl,
-  NavigationControl,
-} from 'react-map-gl'
+import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 // import SinkholeAverageRating from './SinkholeAverageRating'
@@ -27,25 +22,25 @@ const Sinkhole = props => {
 
   // const [markers, setMarkers] = useState([])
 
-  const [newReviewText, setNewReviewText] = useState('')
+  // const [newReviewText, setNewReviewText] = useState('')
   const [answer, setAnswer] = useState(false)
-  const [priorReviews, setPriorReviews] = useState({})
+  // const [priorReviews, setPriorReviews] = useState({})
   const [reviews, setReviews] = useState(sinkhole.reviews)
 
-  const loadPrevReviews = async () => {
-    const resp = await axios.get(`/api/sinkholes/${sinkhole.id}/reviews`)
-    console.log(resp)
-    setPriorReviews(resp.data)
-  }
+  // const loadPrevReviews = async () => {
+  //   const resp = await axios.get(`/api/sinkholes/${sinkhole.id}/reviews`)
+  //   console.log(resp)
+  //   setPriorReviews(resp.data)
+  // }
 
-  useEffect(() => {
-    loadPrevReviews()
-  }, [])
+  // useEffect(() => {
+  //   loadPrevReviews()
+  // }, [])
 
   const sendYesOrNoToApi = async () => {
     const resp = await axios.post(`/api/sinkholes/${sinkhole.id}/reviews`, {
       answer: answer,
-      comment: newReviewText,
+      // comment: newReviewText,
     })
     console.log(resp.data)
     // update state with  the new data
@@ -72,7 +67,7 @@ const Sinkhole = props => {
 
   return (
     <main className="sinkhole-details">
-      <img src={PlaceSinkhole} alt="Huh" />
+      <img src={PlaceSinkhole} width="100%" alt="" />
       <section className="sinkhole-header">
         <h2>Details for {sinkhole.name}</h2>
 
@@ -128,7 +123,7 @@ const Sinkhole = props => {
               <div onClick={() => markerClicked(sinkhole)}>🕳</div>
               {/* <div>🕳</div> */}
             </Marker>
-            <NavigationControl />
+            {/* <NavigationControl /> */}
           </ReactMapGL>
         </section>
         <section className="vote">

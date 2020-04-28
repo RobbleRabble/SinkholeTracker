@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 
 export function Home() {
   const [viewport, setViewport] = useState({
-    width: 400,
-    height: 400,
     latitude: 28.0395,
     longitude: -81.94786,
     zoom: 8,
@@ -71,13 +69,12 @@ export function Home() {
           Photo of a sinkhole in the village of Pinzo do Morado, in Guerrero
           state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
-        <h1>This is a test</h1>
 
         <section className="options">
           <h4>How can I help?</h4>
-          <p>View All Reported sinkholes by county?</p>
+          <p>Search For Sinkholes by name or county</p>
           <button>
-            <Link to="/view/county">View</Link>
+            <Link to="/search">Search</Link>
           </button>
           <p>View all sinkholes in database?</p>
           <button>
@@ -87,25 +84,22 @@ export function Home() {
           <button>
             <Link to="/add">Add</Link>
           </button>
-          <p>Find insurance companies near you?</p>
+          {/* <p>Find insurance companies near you?</p>
           <button>
             <Link to="/insure">Claims</Link>
-          </button>
-          <p>Search For Sinkholes by name or county</p>
-          <button>
-            <Link to="/search">Search</Link>
-          </button>
+          </button> */}
+
           <p>FAQ</p>
           <button>
             <Link to="/faq">Learn!</Link>
           </button>
         </section>
-        <section class="featured-sinkhole">
-          <h3>Random sinkhole</h3>
-        </section>
         <section className="map-container">
+          <h2>Map of sinkholes</h2>
           <ReactMapGL
             className="sinkhole-map"
+            height="100vh"
+            width="auto"
             {...viewport}
             onViewportChange={setViewport}
             mapboxApiAccessToken={

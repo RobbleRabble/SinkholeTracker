@@ -1,18 +1,18 @@
-import React from 'react'
+// import React from 'react'
 
-const SinkholeComments = props => {
-  const { reviews } = props
+// const SinkholeComments = props => {
+//   const { reviews } = props
 
-  let total = 0
-  for (let i = 0; i < reviews.length; i++) {
-    total += reviews[i].rating
-  }
-  const avg = total / reviews.length
-  return (
-    <>
-      {avg} /5 ({reviews.length} reviews)
-    </>
-  )
-}
+//   let total = 0
+//   for (let i = 0; i < reviews.length; i++) {
+//     total += reviews[i].rating
+//   }
+//   const avg = total / reviews.length
+//   return (
+//     <>
+//       {avg} /5 ({reviews.length} reviews)
+//     </>
+//   )
+// }
 
-export default SinkholeComments
+// export default SinkholeComments

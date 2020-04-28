@@ -1,17 +1,18 @@
 import React from 'react'
 import { Router, Link, Route, Switch } from 'react-router-dom'
+import Sinkhole from './Sinkhole'
 
 const AllSinkholes = props => {
-  const { question } = props
+  const { sinkhole } = props
   return (
     <>
       <main>
         <section>
-          <h1>
-            <Link to={`/question/${question.id}`}>{question.userQuestion}</Link>
-          </h1>
-          <h2>KeyWord(s) for this question:</h2>
-          <p>{question.keyWord}</p>
+          <ul>
+            <li>
+              <Link to={`/sinkholes/${sinkhole.id}`}>{sinkhole.name}</Link>
+            </li>
+          </ul>
         </section>
       </main>
     </>
