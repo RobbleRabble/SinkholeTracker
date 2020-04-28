@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 import EmptyHoleList from '../components/EmptyHoleList'
 import SinkholeList from '../components/SinkholeList'
+import Sinkhole from '../components/Sinkhole'
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -27,11 +28,17 @@ const Search = () => {
         <button onClick={searchForHoles}>Search</button>
       </section>
       <main>
-        {results.length > 0 ? (
-          <SinkholeList results={results} />
-        ) : (
-          <EmptyHoleList />
-        )}
+        <section className="search-results">
+          <ul>
+            <li>
+              {results.length > 0 ? (
+                <SinkholeList results={results} />
+              ) : (
+                <EmptyHoleList />
+              )}
+            </li>
+          </ul>
+        </section>
       </main>
     </>
   )

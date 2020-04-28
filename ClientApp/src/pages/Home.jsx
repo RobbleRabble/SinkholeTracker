@@ -70,8 +70,8 @@ export function Home() {
           state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
 
+        <h3>How can I help?</h3>
         <section className="options">
-          <h4>How can I help?</h4>
           <p>Search For Sinkholes by name or county</p>
           <button>
             <Link to="/search">Search</Link>

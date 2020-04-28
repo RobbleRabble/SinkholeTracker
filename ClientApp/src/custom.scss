@@ -7,6 +7,10 @@ font code {
   color: #e01a76;
 }
 
+ul {
+  list-style: none;
+}
+
 .intro-text {
   display: flex;
   justify-content: center;
@@ -17,6 +21,7 @@ font code {
 .credits {
   width: auto;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 }
 
 .btn-primary {
@@ -32,9 +37,12 @@ font code {
 .options {
   text-align: center;
   width: 100%;
+  height: 100vh;
   justify-content: center;
   margin-right: 1rem;
   align-items: center;
+  background-image: url('./images/Florida_vintage_map.jpg');
+  background-size: cover;
 }
 
 .button {
@@ -43,6 +51,8 @@ font code {
 
 body {
   background-color: lightseagreen;
+  background-size: 100%;
+  text-align: center;
 }
 
 .hero {
@@ -62,6 +72,23 @@ body {
   display: block;
   font-size: 2rem;
   padding: 1rem;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  background: linear-gradient(
+    rgba(184, 183, 182, 0.75),
+    rgba(50, 52, 53, 0.75)
+  );
+  width: 100%;
+}
+
+.options > h3 {
+  background-image: none;
+}
+.options > p {
+  display: block;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
@@ -170,4 +197,11 @@ section.redirect {
   flex-direction: column;
   margin-left: 0;
   margin-right: 0;
+}
+
+.search-terms > li {
+  list-style-position: outside;
+  border: 1px solid black;
+  list-style-type: square;
+  display: flex;
 }
