@@ -72,8 +72,8 @@ export function Home() {
           state, Mexico, on August 26, 2018. Picture provided by The Atlantic
         </footer>
 
-        <section class="what-want">
-          <h3>How can I help?</h3>
+        <section className="options">
+          <h4>How can I help?</h4>
           <p>View All Reported sinkholes by county?</p>
           <button>
             <Link to="/view/county">View</Link>
